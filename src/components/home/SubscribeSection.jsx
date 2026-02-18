@@ -28,10 +28,17 @@ export default function SubscribeSection() {
 
           {/* Social Icons */}
           <div className="subscribe-social">
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaTwitter /></a>
-          </div>
+  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+    <FaFacebookF />
+  </a>
+  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+    <FaInstagram />
+  </a>
+  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+    <FaTwitter />
+  </a>
+</div>
+
 
         </div>
 
