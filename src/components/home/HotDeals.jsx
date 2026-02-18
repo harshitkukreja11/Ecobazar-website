@@ -97,8 +97,6 @@ export default function HotDeals() {
                   <div><strong>41</strong><span>MINS</span></div>
                   <div><strong>31</strong><span>SECS</span></div>
                 </div>
-
-                <button className="cart-btn">Add to Cart</button>
               </div>
             </div>
           </div>
