@@ -1,5 +1,4 @@
 import "./footer.css";
-import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -11,13 +10,12 @@ export default function Footer() {
           {/* Column 1 */}
           <div className="footer-col">
             {/* Logo */}
-<Link to="/" className="logo-wrapper">
-  <img
-    src="https://ecobazar-ecommerce.vercel.app/_next/image?url=%2Fimages%2Flogo.png&w=96&q=75"
-    alt="Ecobazar Logo"
-    className="eco-logo"
-  />
-</Link>
+<img
+  src="https://ecobazar-ecommerce.vercel.app/images/logo.png"
+  alt="Ecobazar Logo"
+  className="eco-logo"
+/>
+
             <h2 className="footer-logo">Ecobazar</h2>
 
             <p className="footer-desc">

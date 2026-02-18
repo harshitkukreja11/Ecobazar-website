@@ -40,13 +40,12 @@ export default function Header() {
         <div className="container d-flex align-items-center justify-content-between">
 
          {/* Logo */}
-<Link to="/" className="logo-wrapper">
-  <img
-    src="https://ecobazar-ecommerce.vercel.app/_next/image?url=%2Fimages%2Flogo.png&w=96&q=75"
-    alt="Ecobazar Logo"
-    className="eco-logo"
-  />
-</Link>
+<img
+  src="https://ecobazar-ecommerce.vercel.app/images/logo.png"
+  alt="Ecobazar Logo"
+  className="eco-logo"
+/>
+
 <h1>Ecobazar</h1>
 
 
