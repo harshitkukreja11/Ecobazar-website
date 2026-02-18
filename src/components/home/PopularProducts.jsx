@@ -3,63 +3,63 @@ import "./popularProducts.css";
 
 const products = [
   {
-    name: "Fresh Red Apple",
+    id: 1,
+    title: "Fresh Red Apple",
     price: 14.99,
     rating: 4,
-    image:
-      "https://ecobazar-ecommerce.vercel.app/_next/image?url=%2Fimages%2Fpopular-products%2Fapple.png&w=640&q=75",
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/apple.png",
   },
   {
-    name: "Fresh Orange",
+    id: 2,
+    title: "Fresh Orange",
     price: 12.99,
     rating: 5,
-    image:
-      "https://ecobazar-ecommerce.vercel.app/_next/image?url=%2Fimages%2Fpopular-products%2Forange.png&w=640&q=75",
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/orange.png",
   },
   {
-    name: "Green Cabbage",
+    id: 3,
+    title: "Green Cabbage",
     price: 8.99,
     rating: 4,
-    image:
-      "https://ecobazar-ecommerce.vercel.app/_next/image?url=%2Fimages%2Fpopular-products%2Fcabbage.png&w=640&q=75",
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/cabbage.png",
   },
   {
-    name: "Green Lettuce",
+    id: 4,
+    title: "Green Lettuce",
     price: 6.99,
     rating: 4,
-    image:
-      "https://ecobazar-ecommerce.vercel.app/_next/image?url=%2Fimages%2Fpopular-products%2Flettuce.png&w=640&q=75",
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/lettuce.png",
   },
   {
-    name: "Eggplant",
+    id: 5,
+    title: "Eggplant",
     price: 10.99,
     rating: 3,
-    image:
-      "https://ecobazar-ecommerce.vercel.app/_next/image?url=%2Fimages%2Fpopular-products%2Feggplant.png&w=640&q=75",
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/eggplant.png",
   },
   {
-    name: "Fresh Potatoes",
+    id: 6,
+    title: "Fresh Potatoes",
     price: 9.99,
     rating: 4,
-    image:
-      "https://ecobazar-ecommerce.vercel.app/_next/image?url=%2Fimages%2Fpopular-products%2Fpotatoes.png&w=640&q=75",
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/potatoes.png",
   },
   {
-    name: "Sweet Corn",
+    id: 7,
+    title: "Sweet Corn",
     price: 7.99,
     rating: 4,
-    image:
-      "https://ecobazar-ecommerce.vercel.app/_next/image?url=%2Fimages%2Fpopular-products%2Fcorn.png&w=640&q=75",
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/corn.png",
   },
   {
-    name: "Cauliflower",
+    id: 8,
+    title: "Cauliflower",
     price: 11.99,
     rating: 5,
-    image:
-      "https://ecobazar-ecommerce.vercel.app/_next/image?url=%2Fimages%2Fpopular-products%2Fcauliflower.png&w=640&q=75",
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/cauliflower.png",
   },
-  
 ];
+
 
 export default function PopularProducts() {
   return (
@@ -72,8 +72,9 @@ export default function PopularProducts() {
         </div>
 
         <div className="row g-4">
-          {products.map((product, index) => (
-            <div key={index} className="col-lg-3 col-md-4 col-sm-6">
+          {products.map((product) => (
+  <div key={product.id} className="col-lg-3 col-md-4 col-sm-6">
+
               <ProductCard product={product} />
             </div>
           ))}
