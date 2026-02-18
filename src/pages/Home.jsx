@@ -7,7 +7,6 @@ import InstagramSection from "../components/home/InstagramSection";
 import LatestNews from "../components/home/LatestNews";
 import PopularCategories from "../components/home/PopularCategories";
 import PopularProducts from "../components/home/PopularProducts";
-import SubscribeSection from "../components/home/SubscribeSection";
 import SummerBanner from "../components/home/SummerBannner";
 import Testimonials from "../components/home/Testimonials";
 
@@ -26,9 +25,8 @@ export default function Home() {
       <LatestNews />
       <Testimonials />
       <InstagramSection />
-      <SubscribeSection />
 
-   
+
     </>
   );
 }
