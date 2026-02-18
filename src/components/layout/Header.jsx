@@ -16,6 +16,10 @@ export default function Header() {
     (acc, item) => acc + item.quantity,
     0
   );
+  const wishlistCount = useSelector(
+  (state) => state.wishlist.items.length
+);
+
 
   return (
     <>
@@ -62,7 +66,15 @@ export default function Header() {
               </button>
             </div>
           </div>
-
+          {/*Wishlist*/}
+ <Link to="/wishlist" className="position-relative">
+  ❤️
+  {wishlistCount > 0 && (
+    <span className="badge bg-danger position-absolute top-0 start-100 translate-middle">
+      {wishlistCount}
+    </span>
+  )}
+</Link>
           {/* Cart */}
           <Link to="/cart" className="cart-section text-decoration-none">
             <FaShoppingCart size={22} />
@@ -81,6 +93,8 @@ export default function Header() {
           </Link>
         </div>
       </div>
+      
+
 
       {/* ================= NAVBAR ================= */}
       <nav className="eco-navbar navbar navbar-expand-lg">
@@ -138,6 +152,7 @@ export default function Header() {
             <div className="eco-phone">
               +6396-1336-3109
             </div>
+           
           </div>
         </div>
       </nav>

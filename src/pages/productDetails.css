@@ -1,0 +1,12 @@
+img {
+  border-radius: 10px;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+.btn-success {
+  padding: 10px 25px;
+  font-weight: 500;
+}

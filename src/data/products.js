@@ -1,0 +1,58 @@
+export const products = [
+  {
+    id: 1,
+    title: "Fresh Red Apple",
+    price: 14.99,
+    rating: 4,
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/apple.png",
+  },
+  {
+    id: 2,
+    title: "Fresh Orange",
+    price: 12.99,
+    rating: 5,
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/orange.png",
+  },
+  {
+    id: 3,
+    title: "Green Cabbage",
+    price: 8.99,
+    rating: 4,
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/cabbage.png",
+  },
+  {
+    id: 4,
+    title: "Green Lettuce",
+    price: 6.99,
+    rating: 4,
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/lettuce.png",
+  },
+  {
+    id: 5,
+    title: "Eggplant",
+    price: 10.99,
+    rating: 3,
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/eggplant.png",
+  },
+  {
+    id: 6,
+    title: "Fresh Potatoes",
+    price: 9.99,
+    rating: 4,
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/potatoes.png",
+  },
+  {
+    id: 7,
+    title: "Sweet Corn",
+    price: 7.99,
+    rating: 4,
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/corn.png",
+  },
+  {
+    id: 8,
+    title: "Cauliflower",
+    price: 11.99,
+    rating: 5,
+    image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/cauliflower.png",
+  },
+];
