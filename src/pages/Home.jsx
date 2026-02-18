@@ -3,10 +3,13 @@ import FeaturedProducts from "../components/home/FeaturedProducts";
 import Features from "../components/home/Features";
 import HeroSection from "../components/home/HeroSection";
 import HotDeals from "../components/home/HotDeals";
+import InstagramSection from "../components/home/InstagramSection";
 import LatestNews from "../components/home/LatestNews";
 import PopularCategories from "../components/home/PopularCategories";
 import PopularProducts from "../components/home/PopularProducts";
+import SubscribeSection from "../components/home/SubscribeSection";
 import SummerBanner from "../components/home/SummerBannner";
+import Testimonials from "../components/home/Testimonials";
 
 
 export default function Home() {
@@ -21,6 +24,9 @@ export default function Home() {
       <SummerBanner />
       <FeaturedProducts />
       <LatestNews />
+      <Testimonials />
+      <InstagramSection />
+      <SubscribeSection />
 
    
     </>

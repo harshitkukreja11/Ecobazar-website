@@ -1,0 +1,71 @@
+.instagram-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.instagram-header h3 {
+  font-weight: 600;
+}
+
+/* Grid */
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+
+/* Card */
+.insta-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.insta-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+/* Overlay */
+.insta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 178, 7, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 28px;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.insta-card:hover img {
+  transform: scale(1.1);
+}
+
+.insta-card:hover .insta-overlay {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .instagram-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .instagram-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .instagram-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
