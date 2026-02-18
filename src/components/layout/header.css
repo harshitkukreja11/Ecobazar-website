@@ -1,0 +1,130 @@
+/* =========================
+   TOP BAR
+========================= */
+.top-bar {
+
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.top-bar a {
+  color: #ffffff;
+  transition: 0.3s ease;
+}
+
+.top-bar a:hover {
+  color: #00b207;
+}
+
+/* =========================
+   MAIN HEADER
+========================= */
+.main-header {
+  padding: 18px 0;
+  border-bottom: 1px solid #eeeeee;
+  background: #ffffff;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.eco-logo {
+  height: 42px;
+  object-fit: contain;
+}
+
+
+.search-box {
+  width: 50%;
+}
+
+.search-box .form-control {
+  border-radius: 4px 0 0 4px;
+  box-shadow: none;
+}
+
+.search-box .btn {
+  border-radius: 0 4px 4px 0;
+}
+
+.cart-section {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  position: relative;
+  font-size: 14px;
+}
+
+.cart-section small {
+  display: block;
+  font-size: 12px;
+  color: #777;
+}
+
+.cart-section:hover {
+  color: #00b207;
+}
+
+.cart-badge {
+  background: #00b207;
+  color: #ffffff;
+  font-size: 11px;
+  padding: 4px 7px;
+  border-radius: 50%;
+  position: absolute;
+  top: -6px;
+  right: -12px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.eco-navbar {
+  background-color: #0a0a0ac3;
+  padding: 0;
+}
+
+.eco-navbar .navbar-nav {
+  align-items: center;
+}
+.eco-link {
+  color: #ffffff !important;
+  padding: 16px 20px !important;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+/* 👇 TEXT turns green, NOT background */
+.eco-link:hover {
+  color: #00b207 !important;
+  background-color: transparent !important;
+}
+
+.eco-link.active {
+  color: #00b207 !important;
+  background-color: transparent !important;
+}
+
+
+.eco-phone {
+  color: #00b207;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 991px) {
+  .search-box {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .eco-phone {
+    margin-top: 10px;
+  }
+}

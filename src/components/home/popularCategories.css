@@ -1,0 +1,42 @@
+.section-title {
+  font-weight: 600;
+}
+
+.view-all-btn {
+  background: none;
+  border: none;
+  color: #00b207;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.view-all-btn:hover {
+  text-decoration: underline;
+}
+
+.category-card {
+  background: #ffffff;
+  border: 1px solid #eee;
+  padding: 20px 10px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  border-color: #00b207;
+  box-shadow: 0 8px 20px rgba(0, 178, 7, 0.08);
+}
+
+.category-img {
+  max-height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.category-name {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}

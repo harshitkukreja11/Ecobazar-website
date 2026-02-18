@@ -1,0 +1,20 @@
+.popular-products {
+  background: #ffffff;
+}
+
+.popular-products h3 {
+  font-weight: 600;
+}
+
+.popular-products .view-all-btn {
+  background: none;
+  border: none;
+  color: #00b207;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.popular-products .view-all-btn:hover {
+  text-decoration: underline;
+}

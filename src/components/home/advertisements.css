@@ -1,0 +1,68 @@
+.ad-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+}
+
+.ad-content {
+  max-width: 250px;
+}
+
+.ad-small {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.ad-content h4 {
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.ad-price {
+  margin-bottom: 15px;
+}
+
+.countdown {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.countdown div {
+  text-align: center;
+}
+
+.countdown strong {
+  display: block;
+  font-size: 18px;
+}
+
+.countdown span {
+  font-size: 10px;
+}
+
+.shop-btn {
+  background: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.shop-btn.green {
+  background: #00b207;
+  color: #fff;
+}
+
+.shop-btn:hover {
+  opacity: 0.9;
+}

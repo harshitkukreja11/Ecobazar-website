@@ -1,0 +1,122 @@
+.hot-deals .row {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+}
+
+.hot-big-card {
+  position: relative;
+  border: 1px solid #eee;
+  padding: 30px;
+  height: 100%;
+  min-height: 500px;
+  background: #fff;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #ff4d4f;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 20px;
+}
+
+.hot-img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.hot-content h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.price {
+  margin-bottom: 10px;
+}
+
+.new-price {
+  font-size: 22px;
+  font-weight: 600;
+  color: #00b207;
+  margin-right: 10px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.stars {
+  margin-bottom: 15px;
+}
+
+.stars svg {
+  color: #ddd;
+  margin-right: 3px;
+}
+
+.stars .filled {
+  color: #ffc107;
+}
+
+.countdown-title {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.countdown {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.countdown div {
+  text-align: center;
+}
+
+.countdown strong {
+  display: block;
+  font-size: 20px;
+}
+
+.countdown span {
+  font-size: 11px;
+}
+
+.cart-btn {
+  background: #00b207;
+  border: none;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.cart-btn:hover {
+  background: #009a06;
+}
+
+.right-placeholder {
+  border: 1px solid #eee;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+}
+.hot-deals .row {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+}
+
+.hot-deals .product-card {
+  border-radius: 0;
+  height: 100%;
+}
