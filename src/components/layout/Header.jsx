@@ -44,13 +44,15 @@ export default function Header() {
         <div className="container d-flex align-items-center justify-content-between">
 
          {/* Logo */}
-<img
-  src="https://ecobazar-ecommerce.vercel.app/images/logo.png"
-  alt="Ecobazar Logo"
-  className="eco-logo"
-/>
+<div className="d-flex align-items-center">
+  <img
+    src="https://ecobazar-ecommerce.vercel.app/images/logo.png"
+    alt="Ecobazar Logo"
+    className="eco-logo"
+  />
+  <h1 className="mb-0">Ecobazar</h1>
+</div>
 
-<h1>Ecobazar</h1>
 
 
           {/* Search */}
@@ -100,17 +102,10 @@ export default function Header() {
       <nav className="eco-navbar navbar navbar-expand-lg">
         <div className="container">
 
-          <button
-            className="navbar-toggler bg-light"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#ecoNav"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          
+<div className="eco-nav-wrapper">
 
-          <div className="collapse navbar-collapse" id="ecoNav">
-            <ul className="navbar-nav me-auto">
+<ul className="navbar-nav eco-nav-links">
 
               <li className="nav-item">
                 <NavLink to="/" className="nav-link eco-link">

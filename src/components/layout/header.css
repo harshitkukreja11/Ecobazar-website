@@ -114,6 +114,84 @@
   font-weight: 600;
   font-size: 15px;
 }
+/* =========================
+   HORIZONTAL MOBILE NAV
+========================= */
+
+.eco-nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eco-nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+/* Mobile horizontal scroll */
+@media (max-width: 768px) {
+
+  .eco-nav-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .eco-nav-links {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .eco-nav-links::-webkit-scrollbar {
+    display: none; /* Chrome */
+  }
+
+  .eco-link {
+    padding: 14px 16px !important;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .eco-phone {
+    display: none;
+  }
+}
+/* FORCE horizontal nav on mobile */
+@media (max-width: 768px) {
+
+  .eco-nav-links {
+    display: flex !important;
+    flex-direction: row !important;   /* Override Bootstrap */
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .eco-nav-links .nav-item {
+    flex: 0 0 auto;
+  }
+
+  .eco-link {
+    display: block;
+    padding: 14px 18px !important;
+    font-size: 14px;
+  }
+
+  /* Hide scrollbar (optional) */
+  .eco-nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .eco-nav-links {
+    scrollbar-width: none;
+  }
+}
+
+
 
 /* =========================
    RESPONSIVE
@@ -127,4 +205,97 @@
   .eco-phone {
     margin-top: 10px;
   }
+}
+/* =========================
+   RESPONSIVE IMPROVED
+========================= */
+
+/* Large Tablets */
+@media (max-width: 991px) {
+
+  .main-header .container {
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .logo-wrapper {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .search-box {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .cart-section {
+    margin-top: 10px;
+  }
+
+  .eco-phone {
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+
+  .top-bar .container {
+    justify-content: center !important;
+    text-align: center;
+  }
+
+  .main-header {
+    padding: 15px 0;
+  }
+
+  .eco-logo {
+    height: 36px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .cart-section {
+    justify-content: center;
+    font-size: 13px;
+  }
+
+  .cart-badge {
+    top: -5px;
+    right: -8px;
+  }
+
+  .eco-navbar .navbar-nav {
+    text-align: center;
+  }
+
+  .eco-link {
+    padding: 12px 0 !important;
+  }
+
+  .eco-phone {
+    display: none; /* Hide phone on small screens */
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 576px) {
+
+  .search-box .form-control {
+    font-size: 14px;
+  }
+
+  .search-box .btn {
+    font-size: 14px;
+  }
+
+  .cart-section small {
+    display: none; /* Hide "Shopping cart" text */
+  }
+
 }
