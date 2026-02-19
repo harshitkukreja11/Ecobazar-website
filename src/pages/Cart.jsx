@@ -6,6 +6,8 @@ import {
 } from "../features/cart/cartSlice";
 import { Link } from "react-router-dom";
 import "./cart.css";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Cart() {
   const { items } = useSelector((state) => state.cart);
@@ -15,6 +17,7 @@ export default function Cart() {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
+const navigate = useNavigate();
 
   return (
     <div className="cart-page container py-5">
@@ -115,9 +118,13 @@ export default function Cart() {
                 <span>${total.toFixed(2)}</span>
               </div>
 
-              <button className="btn btn-success w-100 mt-3">
-                Proceed to Checkout
-              </button>
+              <button
+  className="btn btn-success mt-3"
+  onClick={() => navigate("/checkout")}
+>
+  Proceed to Checkout
+</button>
+
             </div>
           </div>
         </div>
