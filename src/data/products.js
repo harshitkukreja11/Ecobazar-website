@@ -4,6 +4,9 @@ export const products = [
     title: "Fresh Red Apple",
     price: 14.99,
     rating: 4,
+    category: "Fruits",
+    isNew: true,
+    isSale: false,
     image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/apple.png",
   },
   {
@@ -11,6 +14,9 @@ export const products = [
     title: "Fresh Orange",
     price: 12.99,
     rating: 5,
+    category: "Fruits",
+    isNew: false,
+    isSale: true,
     image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/orange.png",
   },
   {
@@ -18,6 +24,9 @@ export const products = [
     title: "Green Cabbage",
     price: 8.99,
     rating: 4,
+    category: "Vegetables",
+    isNew: false,
+    isSale: false,
     image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/cabbage.png",
   },
   {
@@ -25,6 +34,9 @@ export const products = [
     title: "Green Lettuce",
     price: 6.99,
     rating: 4,
+    category: "Vegetables",
+    isNew: true,
+    isSale: false,
     image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/lettuce.png",
   },
   {
@@ -32,6 +44,9 @@ export const products = [
     title: "Eggplant",
     price: 10.99,
     rating: 3,
+    category: "Vegetables",
+    isNew: false,
+    isSale: true,
     image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/eggplant.png",
   },
   {
@@ -39,6 +54,9 @@ export const products = [
     title: "Fresh Potatoes",
     price: 9.99,
     rating: 4,
+    category: "Vegetables",
+    isNew: false,
+    isSale: false,
     image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/potatoes.png",
   },
   {
@@ -46,6 +64,9 @@ export const products = [
     title: "Sweet Corn",
     price: 7.99,
     rating: 4,
+    category: "Vegetables",
+    isNew: false,
+    isSale: false,
     image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/corn.png",
   },
   {
@@ -53,6 +74,9 @@ export const products = [
     title: "Cauliflower",
     price: 11.99,
     rating: 5,
+    category: "Vegetables",
+    isNew: true,
+    isSale: false,
     image: "https://ecobazar-ecommerce.vercel.app/images/popular-products/cauliflower.png",
   },
 ];

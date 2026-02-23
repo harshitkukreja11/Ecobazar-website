@@ -1,0 +1,224 @@
+/* =========================
+   PAGE SPACING
+========================= */
+.blog-page {
+  padding: 60px 0;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.blog-sidebar {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+.blog-sidebar h5 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #f2f2f2;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category-item:hover {
+  color: #00b207;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag-item {
+  padding: 6px 14px;
+  background: #f3f3f3;
+  border-radius: 30px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tag-item:hover {
+  background: #00b207;
+  color: #fff;
+}
+
+/* =========================
+   BLOG CARD
+========================= */
+.blog-card {
+  margin-bottom: 60px;
+}
+
+/* IMAGE */
+.blog-image {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.blog-image img {
+  width: 100%;
+  height: 500px; /* BIG IMAGE */
+  object-fit: cover;
+  border-radius: 18px;
+  transition: 0.4s ease;
+}
+
+.blog-image:hover img {
+  transform: scale(1.05);
+}
+
+/* DATE BADGE */
+.date-badge {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background: #fff;
+  padding: 14px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.date-badge span {
+  display: block;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.date-badge small {
+  font-size: 13px;
+  color: #00b207;
+}
+
+/* CONTENT BELOW IMAGE */
+.blog-content {
+  margin-top: 25px;
+}
+
+.blog-meta {
+  display: flex;
+  gap: 30px;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.blog-content h4 {
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+/* READ MORE */
+.read-more {
+  background: none;
+  border: none;
+  color: #00b207;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   TOP BAR (RESULT + SORT)
+========================= */
+.blog-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+
+/* =========================
+   PAGINATION
+========================= */
+.pagination {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.pagination span {
+  margin: 0 8px;
+  padding: 10px 16px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pagination span:hover {
+  background: #00b207;
+  color: #fff;
+  border: none;
+}
+
+.pagination .active {
+  background: #00b207;
+  color: #fff;
+  border: none;
+}
+/* =========================
+   RECENTLY ADDED
+========================= */
+.recent-post {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.recent-post img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.recent-post p {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  transition: 0.3s;
+}
+
+.recent-post small {
+  font-size: 12px;
+  color: #888;
+}
+
+.recent-post:hover p {
+  color: #00b207;
+}
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .blog-image img {
+    height: 300px;
+  }
+
+  .blog-meta {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
