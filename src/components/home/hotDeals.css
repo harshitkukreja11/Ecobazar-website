@@ -1,69 +1,107 @@
-.hot-deals .row {
-  --bs-gutter-x: 0;
-  --bs-gutter-y: 0;
+.hot-deals {
+  background: #f9f9f9;
+  padding: 80px 0;
 }
 
+/* Header */
+.hot-deals h3 {
+  font-weight: 600;
+}
+
+.view-all-btn {
+  border: none;
+  background: transparent;
+  color: #00b207;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.view-all-btn:hover {
+  transform: translateX(4px);
+}
+
+/* BIG LEFT CARD */
 .hot-big-card {
   position: relative;
-  border: 1px solid #eee;
-  padding: 30px;
-  height: 100%;
-  min-height: 500px;
   background: #fff;
+  padding: 40px 20px;
+  border-radius: 10px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* horizontal center */
+  justify-content: center; /* vertical center */
+  text-align: center;
+
+  border: 1px solid #eee;
+  transition: 0.3s ease;
 }
 
+.hot-big-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Discount badge */
 .discount-badge {
   position: absolute;
   top: 20px;
   left: 20px;
-  background: #ff4d4f;
+  background: #ff3c3c;
   color: #fff;
-  padding: 6px 12px;
   font-size: 12px;
-  border-radius: 20px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 4px;
 }
 
+/* Image */
 .hot-img {
-  width: 100%;
-  max-height: 250px;
+  max-height: 200px;
   object-fit: contain;
   margin-bottom: 20px;
 }
 
+/* Content */
 .hot-content h4 {
   font-weight: 600;
   margin-bottom: 10px;
 }
 
+/* Price */
 .price {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
   margin-bottom: 10px;
 }
 
 .new-price {
-  font-size: 22px;
-  font-weight: 600;
   color: #00b207;
-  margin-right: 10px;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .old-price {
   text-decoration: line-through;
-  color: #aaa;
+  color: #999;
 }
 
+/* Stars */
 .stars {
   margin-bottom: 15px;
 }
 
 .stars svg {
   color: #ddd;
-  margin-right: 3px;
 }
 
 .stars .filled {
   color: #ffc107;
 }
 
+/* Countdown */
 .countdown-title {
   font-size: 14px;
   margin-bottom: 10px;
@@ -71,8 +109,8 @@
 
 .countdown {
   display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 20px;
 }
 
 .countdown div {
@@ -82,41 +120,125 @@
 .countdown strong {
   display: block;
   font-size: 20px;
+  font-weight: 600;
 }
 
 .countdown span {
   font-size: 11px;
+  color: #777;
+}
+/* ============================= */
+/* HOT DEALS CUSTOM GRID LAYOUT */
+/* ============================= */
+
+.hot-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
 }
 
-.cart-btn {
-  background: #00b207;
-  border: none;
-  color: #fff;
-  padding: 10px 25px;
-  border-radius: 30px;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
-
-.cart-btn:hover {
-  background: #009a06;
-}
-
-.right-placeholder {
-  border: 1px solid #eee;
-  height: 100%;
-  min-height: 500px;
+/* LEFT SIDE */
+.left-section {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fafafa;
-}
-.hot-deals .row {
-  --bs-gutter-x: 0;
-  --bs-gutter-y: 0;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.hot-deals .product-card {
-  border-radius: 0;
+/* RIGHT SIDE (4 CARDS - 2x2) */
+.right-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+/* 3 CARDS BELOW BIG CARD */
+.bottom-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Make product cards fill grid cells */
+.right-section .product-card,
+.bottom-three .product-card {
   height: 100%;
+}
+/* ========================= */
+/* EXACT LAYOUT - NO GAPS   */
+/* ========================= */
+
+.hot-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* 3 columns */
+  grid-auto-rows: 1fr;
+  gap: 0; /* REMOVE spacing */
+}
+
+/* Big card spans 2 rows */
+.big-card {
+  grid-row: span 2;
+}
+
+/* Remove card spacing */
+.hot-grid .product-card,
+.hot-big-card {
+  border-radius: 0;
+  margin: 0;
+  height: 100%;
+}
+
+/* Remove internal shadows if needed */
+.hot-grid .product-card {
+  border: 1px solid #eee;
+}
+
+/* Make everything same height */
+.grid-item {
+  height: 100%;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hot-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .big-card {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .hot-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .big-card {
+    grid-column: span 1;
+  }
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 992px) {
+  .hot-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .right-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom-three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .right-section,
+  .bottom-three {
+    grid-template-columns: 1fr;
+  }
 }

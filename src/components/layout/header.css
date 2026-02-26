@@ -1,19 +1,70 @@
 /* =========================
+   GLOBAL
+========================= */
+html, body {
+  overflow-x: hidden;
+}
+
+/* =========================
    TOP BAR
 ========================= */
 .top-bar {
-
+  background: #f5f5f5;
+  font-size: 13px;
   padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+}
+
+.location-icon {
+  color: #00b207;
   font-size: 14px;
 }
 
-.top-bar a {
-  color: #ffffff;
-  transition: 0.3s ease;
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
-.top-bar a:hover {
+.top-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  color: #555;
+  transition: 0.3s;
+}
+
+.top-dropdown:hover {
   color: #00b207;
+}
+
+.top-link {
+  color: #555;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.top-link:hover {
+  color: #00b207;
+}
+
+.divider {
+  margin: 0 6px;
+  color: #aaa;
 }
 
 /* =========================
@@ -21,13 +72,12 @@
 ========================= */
 .main-header {
   padding: 18px 0;
-  border-bottom: 1px solid #eeeeee;
-  background: #ffffff;
-}
-
-.logo-wrapper {
-  display: flex;
-  align-items: center;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
 .eco-logo {
@@ -35,7 +85,7 @@
   object-fit: contain;
 }
 
-
+/* SEARCH */
 .search-box {
   width: 50%;
 }
@@ -49,12 +99,17 @@
   border-radius: 0 4px 4px 0;
 }
 
+/* =========================
+   CART
+========================= */
 .cart-section {
   display: flex;
   align-items: center;
-  color: #000000;
+  color: #000;
   position: relative;
   font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .cart-section small {
@@ -69,54 +124,27 @@
 
 .cart-badge {
   background: #00b207;
-  color: #ffffff;
+  color: #fff;
   font-size: 11px;
-  padding: 4px 7px;
+  min-width: 18px;
+  height: 18px;
   border-radius: 50%;
   position: absolute;
-  top: -6px;
-  right: -12px;
+  top: -8px;
+  right: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* =========================
    NAVBAR
 ========================= */
 .eco-navbar {
-  background-color: #0a0a0ac3;
-  padding: 0;
+  background: rgba(10, 10, 10, 0.9);
+  position: relative;
+  z-index: 1200;
 }
-
-.eco-navbar .navbar-nav {
-  align-items: center;
-}
-.eco-link {
-  color: #ffffff !important;
-  padding: 16px 20px !important;
-  font-weight: 500;
-  font-size: 15px;
-  transition: color 0.3s ease;
-}
-
-/* 👇 TEXT turns green, NOT background */
-.eco-link:hover {
-  color: #00b207 !important;
-  background-color: transparent !important;
-}
-
-.eco-link.active {
-  color: #00b207 !important;
-  background-color: transparent !important;
-}
-
-
-.eco-phone {
-  color: #00b207;
-  font-weight: 600;
-  font-size: 15px;
-}
-/* =========================
-   HORIZONTAL MOBILE NAV
-========================= */
 
 .eco-nav-wrapper {
   display: flex;
@@ -127,175 +155,180 @@
 .eco-nav-links {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
-/* Mobile horizontal scroll */
-@media (max-width: 768px) {
-
-  .eco-nav-wrapper {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .eco-nav-links {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    white-space: nowrap;
-    scrollbar-width: none; /* Firefox */
-  }
-
-  .eco-nav-links::-webkit-scrollbar {
-    display: none; /* Chrome */
-  }
-
-  .eco-link {
-    padding: 14px 16px !important;
-    font-size: 14px;
-    flex-shrink: 0;
-  }
-
-  .eco-phone {
-    display: none;
-  }
-}
-/* FORCE horizontal nav on mobile */
-@media (max-width: 768px) {
-
-  .eco-nav-links {
-    display: flex !important;
-    flex-direction: row !important;   /* Override Bootstrap */
-    flex-wrap: nowrap !important;
-    overflow-x: auto;
-    white-space: nowrap;
-    width: 100%;
-  }
-
-  .eco-nav-links .nav-item {
-    flex: 0 0 auto;
-  }
-
-  .eco-link {
-    display: block;
-    padding: 14px 18px !important;
-    font-size: 14px;
-  }
-
-  /* Hide scrollbar (optional) */
-  .eco-nav-links::-webkit-scrollbar {
-    display: none;
-  }
-
-  .eco-nav-links {
-    scrollbar-width: none;
-  }
+/* Premium Hover Underline */
+.eco-link {
+  color: #fff;
+  padding: 16px 20px;
+  font-weight: 500;
+  font-size: 15px;
+  position: relative;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
+.eco-link::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  width: 0;
+  height: 2px;
+  background: #00b207;
+  transition: width 0.3s ease;
+}
 
+.eco-link:hover,
+.eco-link.active {
+  color: #00b207;
+}
+
+.eco-link:hover::after,
+.eco-link.active::after {
+  width: calc(100% - 40px);
+}
+
+.eco-phone {
+  color: #00b207;
+  font-weight: 600;
+  font-size: 15px;
+}
 
 /* =========================
-   RESPONSIVE
+   OVERLAY
+========================= */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(2px);
+  z-index: 1500;
+}
+
+/* =========================
+   TABLET (≤ 991px)
 ========================= */
 @media (max-width: 991px) {
   .search-box {
     width: 100%;
-    margin: 15px 0;
   }
 
   .eco-phone {
     margin-top: 10px;
   }
 }
+
 /* =========================
-   RESPONSIVE IMPROVED
+   MOBILE (≤ 768px)
 ========================= */
-
-/* Large Tablets */
-@media (max-width: 991px) {
-
-  .main-header .container {
-    flex-direction: column;
-    align-items: center !important;
-    text-align: center;
-  }
-
-  .logo-wrapper {
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-
-  .search-box {
-    width: 100%;
-    margin: 15px 0;
-  }
-
-  .cart-section {
-    margin-top: 10px;
-  }
-
-  .eco-phone {
-    margin-top: 10px;
-    text-align: center;
-    width: 100%;
-  }
-}
-
-/* Mobile Devices */
 @media (max-width: 768px) {
 
-  .top-bar .container {
-    justify-content: center !important;
-    text-align: center;
+  /* Top Bar */
+  .top-bar {
+    padding: 6px 0;
+    font-size: 11px;
   }
 
+  .top-bar-content {
+    gap: 6px;
+  }
+
+  .top-left span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Main Header */
   .main-header {
-    padding: 15px 0;
+    padding: 12px 0;
   }
 
   .eco-logo {
-    height: 36px;
+    height: 34px;
   }
 
   .search-box {
-    width: 100%;
-  }
-
-  .cart-section {
-    justify-content: center;
-    font-size: 13px;
-  }
-
-  .cart-badge {
-    top: -5px;
-    right: -8px;
-  }
-
-  .eco-navbar .navbar-nav {
-    text-align: center;
-  }
-
-  .eco-link {
-    padding: 12px 0 !important;
-  }
-
-  .eco-phone {
-    display: none; /* Hide phone on small screens */
-  }
-}
-
-/* Extra Small Devices */
-@media (max-width: 576px) {
-
-  .search-box .form-control {
-    font-size: 14px;
-  }
-
-  .search-box .btn {
-    font-size: 14px;
+    display: none;
   }
 
   .cart-section small {
-    display: none; /* Hide "Shopping cart" text */
+    display: none;
   }
 
+  /* =========================
+     MOBILE SIDEBAR
+  ========================= */
+  .mobile-menu-icon {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #fff;
+  }
+
+  .eco-nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 270px;
+    height: 100vh;
+    background: #111;
+    flex-direction: column;
+    padding: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 2000;
+    overflow-y: auto;
+  }
+
+  .eco-nav-links.active {
+    transform: translateX(0);
+  }
+
+  .eco-nav-links li {
+    list-style: none;
+    margin-bottom: 18px;
+  }
+
+  .eco-nav-links a {
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+  .eco-nav-links a:hover {
+    color: #00b207;
+  }
+
+  .eco-phone {
+    display: none;
+  }
+  .top-bar-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .top-right {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .divider {
+    display: none;
+  }
+}
+
+/* =========================
+   EXTRA SMALL (≤ 576px)
+========================= */
+@media (max-width: 576px) {
+  .eco-logo {
+    height: 32px;
+  }
 }

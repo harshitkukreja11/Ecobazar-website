@@ -5,33 +5,45 @@
   height: 320px;
   border-radius: 8px;
   overflow: hidden;
+
   display: flex;
   align-items: center;
+  justify-content: center; /* horizontal center */
+  text-align: center; /* center text */
+
   padding: 30px;
 }
 
+/* Content wrapper */
 .ad-content {
-  max-width: 250px;
+  max-width: 280px;
+  margin: 0 auto; /* extra safety center */
 }
 
+/* Small label */
 .ad-small {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
+/* Title */
 .ad-content h4 {
   font-weight: 600;
   margin: 10px 0;
 }
 
+/* Price */
 .ad-price {
   margin-bottom: 15px;
 }
 
+/* Countdown */
 .countdown {
   display: flex;
-  gap: 10px;
+  justify-content: center; /* center countdown blocks */
+  gap: 15px;
   margin: 15px 0;
 }
 
@@ -46,12 +58,14 @@
 
 .countdown span {
   font-size: 10px;
+  text-transform: uppercase;
 }
 
+/* Button */
 .shop-btn {
   background: #ffffff;
   border: none;
-  padding: 8px 18px;
+  padding: 8px 20px;
   border-radius: 30px;
   font-weight: 500;
   cursor: pointer;
@@ -65,4 +79,5 @@
 
 .shop-btn:hover {
   opacity: 0.9;
+  transform: translateY(-2px);
 }

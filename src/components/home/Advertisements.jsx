@@ -43,7 +43,7 @@ export default function Advertisements() {
               <div className="ad-content text-light">
                 <span className="ad-small">85% FAT FREE</span>
                 <h4>Low-Fat Meat</h4>
-                <p className="ad-price">Started at $79.99</p>
+                <p className="ad-price">Started at<span className="text-warning"> $79.99</span></p>
                 <button className="shop-btn green">Shop Now →</button>
               </div>
             </div>
@@ -61,7 +61,7 @@ export default function Advertisements() {
               <div className="ad-content">
                 <span className="ad-small">SUMMER SALE</span>
                 <h4>100% Fresh Fruit</h4>
-                <p className="ad-price">Up to 64% OFF</p>
+                <p className="ad-price">Up to <span className="bg-black text-light">64% OFF</span></p>
                 <button className="shop-btn green">Shop Now →</button>
               </div>
             </div>

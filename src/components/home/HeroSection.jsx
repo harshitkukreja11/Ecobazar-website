@@ -15,11 +15,13 @@ export default function HeroSection() {
                 alt="Main Banner"
                 className="img-fluid"
               />
-              <div className="hero-content">
-                <h2>Fresh & Healthy<br></br> Organic Food</h2>
-                <p>Sale up to 30% off</p>
+              <div className="hero-content text-light">
+                <h2 >Fresh & Healthy<br></br> Organic Food</h2>
                 <p>Free shipping on all your orders</p>
-                <Link to="/shop" className="btn btn-success hero-btn">
+                <p>
+  Sale up to <span className="bg-warning px-2 rounded">30% off</span>
+</p>
+                <Link to="/shop" className="btn btn-light text-success hero-btn">
                   Shop Now
                 </Link>
               </div>

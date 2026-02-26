@@ -4,6 +4,8 @@ import { addToCart } from "../features/cart/cartSlice";
 import { useState } from "react";
 import { products } from "../data/products";
 import ProductCard from "../components/product/ProductCard";
+import "./productDetails.css";
+
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -12,6 +14,7 @@ export default function ProductDetails() {
 
   const product = products.find((p) => p.id === Number(id));
   const [activeTab, setActiveTab] = useState("description");
+  const [mainImage, setMainImage] = useState(product.image);
 
 
   if (!product) {
@@ -42,14 +45,36 @@ export default function ProductDetails() {
 
         {/* 🔹 Product Image */}
         <div className="col-md-6">
-          <div className="border rounded p-4 text-center">
-            <img
-              src={product.image}
-              alt={product.title}
-              className="img-fluid"
-            />
-          </div>
-        </div>
+  <div className="d-flex gap-3">
+
+    {/* 🔹 Thumbnail Images */}
+    <div className="thumbnail-wrapper d-flex flex-column gap-3">
+      {[product.image, product.image, product.image, product.image].map(
+        (img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt="thumb"
+            className={`thumbnail-img ${
+              mainImage === img ? "active-thumb" : ""
+            }`}
+            onClick={() => setMainImage(img)}
+          />
+        )
+      )}
+    </div>
+
+    {/* 🔹 Main Image */}
+<div className="border rounded p-4 flex-grow-1 main-image-box">
+        <img
+        src={mainImage}
+        alt={product.title}
+        className="img-fluid"
+      />
+    </div>
+
+  </div>
+</div>
 
         {/* 🔹 Product Info */}
         <div className="col-md-6">
@@ -133,21 +158,21 @@ export default function ProductDetails() {
   {/* Tab Buttons */}
   <div className="d-flex gap-4 border-bottom pb-2">
     <button
-      className={`btn btn-link ${activeTab === "description" ? "fw-bold text-success" : ""}`}
+      className={`btn btn-link text-dark ${activeTab === "description" ? "fw-bold text-success" : ""}`}
       onClick={() => setActiveTab("description")}
     >
       Description
     </button>
 
     <button
-      className={`btn btn-link ${activeTab === "info" ? "fw-bold text-success" : ""}`}
+      className={`btn btn-link text-dark ${activeTab === "info" ? "fw-bold text-success" : ""}`}
       onClick={() => setActiveTab("info")}
     >
       Additional Information
     </button>
 
     <button
-      className={`btn btn-link ${activeTab === "feedback" ? "fw-bold text-success" : ""}`}
+      className={`btn btn-link text-dark ${activeTab === "feedback" ? "fw-bold text-success" : ""}`}
       onClick={() => setActiveTab("feedback")}
     >
       Customer Feedback
@@ -158,43 +183,48 @@ export default function ProductDetails() {
 
     {/* 🔹 DESCRIPTION TAB */}
     {activeTab === "description" && (
-      <div>
-        <p>
-          Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac,
-          viverra at mauris. Maecenas tincidunt ligula a sem vestibulum pharetra.
-          Maecenas auctor tortor lacus, nec laoreet nisi porttitor vel.
-        </p>
+  <div className="row align-items-start g-4">
 
-        <p>
-          Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui.
-          Sed iaculis, metus faucibus elementum tincidunt.
-        </p>
+    {/* LEFT - TEXT CONTENT */}
+    <div className="col-lg-7">
+      <p>
+        Sed commodo aliquam dui ac porta. Fusce ipsum felis,
+        imperdiet at posuere ac, viverra at mauris.
+        Maecenas tincidunt ligula a sem vestibulum pharetra.
+      </p>
 
-        <ul className="list-unstyled mt-3">
-          <li>✔ 100 g of fresh leaves provides.</li>
-          <li>✔ Aliquam ac est at augue volutpat elementum.</li>
-          <li>✔ Quisque nec enim eget sapien molestie.</li>
-          <li>✔ Proin convallis odio volutpat finibus posuere.</li>
-        </ul>
+      <p>
+        Nulla mauris tellus, feugiat quis pharetra sed,
+        gravida ac dui. Sed iaculis, metus faucibus
+        elementum tincidunt.
+      </p>
 
-        <p className="mt-3">
-          Cras et diam maximus, accumsan sapien et, sollicitudin velit.
-          Nulla blandit eros non turpis lobortis iaculis at ut massa.
-        </p>
+      <ul className="list-unstyled mt-3">
+        <li>✔ 100 g of fresh leaves provides.</li>
+        <li>✔ Aliquam ac est at augue volutpat elementum.</li>
+        <li>✔ Quisque nec enim eget sapien molestie.</li>
+        <li>✔ Proin convallis odio volutpat finibus posuere.</li>
+      </ul>
 
-        {/* 🔥 Embedded Video */}
-        <div className="mt-4">
-          <div className="ratio ratio-16x9">
-            <iframe
-              src="https://www.youtube.com/embed/a_0AgvcCQ20"
-              title="Product Video"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
+      <p className="mt-3">
+        Cras et diam maximus, accumsan sapien et,
+        sollicitudin velit. Nulla blandit eros non turpis.
+      </p>
+    </div>
+
+    {/* RIGHT - VIDEO */}
+    <div className="col-lg-5">
+      <div className="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+        <iframe
+          src="https://www.youtube.com/embed/a_0AgvcCQ20"
+          title="Product Video"
+          allowFullScreen
+        ></iframe>
       </div>
-    )}
+    </div>
 
+  </div>
+)}
     {/* 🔹 ADDITIONAL INFORMATION TAB */}
     {activeTab === "info" && (
       <div>
