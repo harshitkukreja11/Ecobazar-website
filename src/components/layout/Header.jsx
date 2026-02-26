@@ -1,6 +1,14 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { FaShoppingCart, FaSearch, FaMapMarkerAlt, FaChevronDown, FaBars, FaTimes, FaHeart } from "react-icons/fa";
+import {
+  FaShoppingCart,
+  FaSearch,
+  FaMapMarkerAlt,
+  FaChevronDown,
+  FaBars,
+  FaTimes,
+  FaHeart
+} from "react-icons/fa";
 import { useState, useEffect, useMemo } from "react";
 import "./header.css";
 
@@ -19,14 +27,17 @@ export default function Header() {
   );
 
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [mobileSearch, setMobileSearch] = useState(false);
+
   const location = useLocation();
 
-const closeMenu = () => {
-  setMobileMenu(false);
-};
+  const closeMenu = () => {
+    setMobileMenu(false);
+  };
 
   useEffect(() => {
     closeMenu();
+    setMobileSearch(false);
   }, [location]);
 
   useEffect(() => {
@@ -42,7 +53,6 @@ const closeMenu = () => {
             <FaMapMarkerAlt className="location-icon" />
             <span>Store Location: Lincoln - 344, Illinois, Chicago, USA</span>
           </div>
-
           <div className="top-right">
             <div className="top-dropdown">
               Eng <FaChevronDown size={10} />
@@ -50,7 +60,6 @@ const closeMenu = () => {
             <div className="top-dropdown">
               USD <FaChevronDown size={10} />
             </div>
-
             <div className="auth-links">
               <Link to="/login" className="top-link">Sign in</Link>
               <span className="divider">/</span>
@@ -62,8 +71,9 @@ const closeMenu = () => {
 
       {/* ================= MAIN HEADER ================= */}
       <div className="main-header">
-        <div className="container d-flex align-items-center justify-content-between">
+        <div className="container header-container">
 
+          {/* Logo */}
           <div className="d-flex align-items-center gap-2">
             <img
               src="https://ecobazar-ecommerce.vercel.app/images/logo.png"
@@ -73,7 +83,8 @@ const closeMenu = () => {
             <h1 className="mb-0 fs-4 fw-bold">Ecobazar</h1>
           </div>
 
-          <div className="search-box">
+          {/* Desktop Search */}
+          <div className="search-box d-none d-md-block">
             <div className="input-group">
               <input type="text" className="form-control" placeholder="Search" />
               <button className="btn btn-success">
@@ -82,7 +93,16 @@ const closeMenu = () => {
             </div>
           </div>
 
+          {/* Right Icons */}
           <div className="d-flex align-items-center gap-4">
+
+            {/* Mobile Search Icon */}
+            <button
+              className="mobile-search-icon d-md-none"
+              onClick={() => setMobileSearch(!mobileSearch)}
+            >
+              <FaSearch size={18} />
+            </button>
 
             {/* Wishlist */}
             <Link to="/wishlist" className="position-relative text-dark">
@@ -97,11 +117,10 @@ const closeMenu = () => {
             {/* Cart */}
             <Link to="/cart" className="cart-section text-decoration-none">
               <FaShoppingCart size={22} />
-              <div className="ms-2">
+              <div className="ms-2 d-none d-md-block">
                 <small>Shopping cart:</small>
                 <div className="fw-bold">${totalAmount.toFixed(2)}</div>
               </div>
-
               {totalItems > 0 && (
                 <span className="cart-badge">{totalItems}</span>
               )}
@@ -109,28 +128,41 @@ const closeMenu = () => {
 
           </div>
         </div>
+
+        {/* 🔥 Mobile Slide Search */}
+        <div className={`mobile-search-bar ${mobileSearch ? "active" : ""}`}>
+          <div className="container">
+            <div className="input-group">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Search products..."
+                autoFocus={mobileSearch}
+              />
+              <button className="btn btn-success">
+                <FaSearch />
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* ================= NAVBAR ================= */}
       <nav className="eco-navbar">
         <div className="container eco-nav-wrapper">
-
           <button
             className="mobile-menu-icon d-lg-none"
             onClick={() => setMobileMenu(true)}
-            aria-label="Open menu"
           >
             <FaBars size={22} />
           </button>
 
           <ul className={`eco-nav-links ${mobileMenu ? "active" : ""}`}>
-
             <li className="mobile-close d-lg-none">
-              <button onClick={closeMenu} aria-label="Close menu">
+              <button onClick={closeMenu}>
                 <FaTimes size={22} />
               </button>
             </li>
-
             <li><NavLink to="/" className="eco-link">Home</NavLink></li>
             <li><NavLink to="/shop" className="eco-link">Shop</NavLink></li>
             <li><NavLink to="/pages" className="eco-link">Pages</NavLink></li>
@@ -142,7 +174,6 @@ const closeMenu = () => {
           <div className="eco-phone d-none d-lg-block">
             +6396-1336-3109
           </div>
-
         </div>
 
         {mobileMenu && (

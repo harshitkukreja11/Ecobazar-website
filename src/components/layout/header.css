@@ -84,7 +84,39 @@ html, body {
   height: 42px;
   object-fit: contain;
 }
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+/* Header Layout */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+/* Mobile Search Icon */
+.mobile-search-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Slide Search */
+.mobile-search-bar {
+  max-height: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.mobile-search-bar.active {
+  max-height: 120px;
+  padding: 15px 0;
+}
 /* SEARCH */
 .search-box {
   width: 50%;
@@ -250,9 +282,9 @@ html, body {
     height: 34px;
   }
 
-  .search-box {
-    display: none;
-  }
+ .search-box {
+  display: none;
+}
 
   .cart-section small {
     display: none;

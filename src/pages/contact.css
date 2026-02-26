@@ -1,0 +1,17 @@
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
+
+.contact-page {
+  max-width: 1200px;
+}
+
+/* Better spacing on mobile */
+@media (max-width: 768px) {
+  .contact-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+  }
+}
